@@ -3,9 +3,6 @@ require('dotenv').config({ path: `${__dirname}/.env` })
 const TelegramBot = require('node-telegram-bot-api')
 const bot = new TelegramBot(process.env.TOKEN, { polling: true })
 
-a = 1
-kk = 0
-
 thxm = /жал|təşəkkür|faleminderit|አመሰግናለሁ|thanks|شكرا لك|շնորհակալություն|dankie|eskerrik|дзякуй|আপনাকে ধন্যবাদ|ကျေးဇူးတင်ပါတယ်|благодаря|hvala|diolch|köszönöm|cảm ơn|mahalo|grazas|ευχαριστώ|მადლობა|આભાર|tak|ngiyabonga|תודה|daalụ|דאַנקען דיר|terima kasih|go raibh maith agat|takk fyrir|gracias|grazie|ṣeun|рахмет|ಧನ್ಯವಾದಗಳು|gràcies|рахмат|謝謝你|谢谢你|고마워|grazie|mèsi|spas|សូមអរគុណ|enkosi|ຂອບໃຈ|gratias|paldies|ačiū|merci|благодарам|misaotra|terima kasih|നന്ദി|grazzi|mihi|धन्यवाद|баярлалаа|Dank|धन्यवाद|dank|takk|ଧନ୍ୟବାଦ|ਧੰਨਵਾਦ|ممنون|dziękuję|obrigada|مننه|murakoze|multumesc|спасибо|faafetai|salamat|хвала|leboha|ස්තූතියි|مهرباني|ďakujem|hvala|mahadsanid|asante|hatur|ташаккур|ขอบคุณ|நன்றி|рәхмәт|ధన్యవాదాలు|teşekkür|sag bol|Rahmat|رەھمەت سىزگە|Дякуємо|شکریہ|Salamat|Kiitos|merci|betanke|godiya|धन्यवाद|tsaug|hvala|zikomo|díky|tack|ndatenda|taing|dankon|tänan|matur|ありがとう|א דאנק/i
 
 bot.onText(/\/start/, (msg) => {
@@ -21,7 +18,6 @@ rn = []
 
 bot.on('text', (msg) => {
   let t = msg.text.toLowerCase()
-  let txtq = '0'
   let txtw = '0'
   let chid = msg.chat.id
 
