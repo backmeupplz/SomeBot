@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 80
 require('dotenv').config({ path: `${__dirname}/.env` })
 
 const TelegramBot = require('node-telegram-bot-api')
-const bot = new TelegramBot(process.env.DB_TOKEN, { polling: true })
+const bot = new TelegramBot(process.env.TOKEN, { polling: true })
 
 a = 1
 kk = 0
