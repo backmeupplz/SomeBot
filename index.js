@@ -1,7 +1,3 @@
-const express = require('express')
-const app = express()
-const PORT = process.env.PORT || 80
-
 require('dotenv').config({ path: `${__dirname}/.env` })
 
 const TelegramBot = require('node-telegram-bot-api')
@@ -48,7 +44,6 @@ bot.onText(thxm, (msg) => {
   let t = msg.text.toLowerCase()
   let txtq = '0'
   let txtw = '0'
-  let chid = msg.chat.id
 
   if (t.indexOf('спасибо') != -1 || t.indexOf('благодарю') != -1)
     txtq = 'Спасибо!'
@@ -68,8 +63,4 @@ bot.onText(thxm, (msg) => {
     bot.sendMessage(msg.chat.id, txtq + ' ' + txtw)
   else if (txtq != '0') bot.sendMessage(msg.chat.id, txtq)
   else if (txtw != '0') bot.sendMessage(msg.chat.id, txtw)
-})
-
-app.listen(PORT, () => {
-  console.log('Thx has been started')
 })
