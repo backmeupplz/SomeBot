@@ -34,25 +34,24 @@ bot.on('text', (msg) => {
 
 bot.onText(thxm, (msg) => {
   let t = msg.text.toLowerCase()
-  let txtq = ''
-  let txtw = ''
+  let txt = ''
   
-while (result = thxm.exec(t)) {
-  if(result[0] != 'жал' && result[0] != 'тако'){  
-         if (result[0] == 'спасибо' || result[0] == 'благодар') txtq += 'Спасибо! ';
-    else if (result[0] == 'thanks') txtq += 'О! Вы из Англии! ';
-    else if (result[0] == 'дякую') txtq += 'Слава Украине! ';
-    else if (result[0] == 'danke') txtq += 'Sehr dankbar! ';
-    else if (result[0] == 'dank') txtq += '0/ ';
-    else if (result[0] == 'grazie') txtq += 'Mamma mia! Pizza mozzarella! ';
-    else if (result[0] == 'merci' || result[0] == 'мерси') txtq += '🥐☕ ';
-    else txtq += 'Спасибо! '
-    }
-       if (result[0] == 'тако') txtq += '🌮 ';
-       if (result[0] == 'жаль') txtq += 'Сейчас ужалю! '
-  else if (result[0] == 'жалк') txtq += 'Жалко у пчелки в попке. ';
-  }
+t.split(' ').forEach(function (i){
+       if (i.indexOf('спасибо') != -1 || t.indexOf('благодар') != -1) txt += 'Спасибо! '
+  else if (i.indexOf('thanks') != -1) txt += 'О! Вы из Англии! '
+  else if (i.indexOf('дякую') != -1) txt += 'Слава Украине! '
+  else if (i.indexOf('danke') != -1) txt += 'Sehr dankbar! '
+  else if (i.indexOf('dank') != -1) txt += '0/ '
+  else if (i.indexOf('grazie') != -1) txt += 'Mamma mia! Pizza mozzarella! '
+  else if (i.indexOf('merci') != -1 || t.indexOf('мерси') != -1) txt += '🥐☕ '
   
-  bot.sendMessage(msg.chat.id, txtq)
-})
-
+  else if (i.indexOf('жаль') != -1) txt += 'Сейчас ужалю! '
+  else if (i.indexOf('жалк') != -1) txt += 'Жалко у пчелки в попке '
+  
+  else if (i.indexOf('тако') != -1) txt += '🌮 '
+  else txt += 'Спасибо!!! '
+  
+});
+  if (txt.length > 500) txt = 'а всё!';
+  if (txt != '') bot.sendMessage(msg.chat.id, txt)
+});
