@@ -49,7 +49,7 @@ t.split(' ').forEach(function (i){
   else if (i.indexOf('жалк') != -1) txt += 'Жалко у пчелки в попке '
   
   else if (i.indexOf('тако') != -1) txt += '🌮 '
-  else txt += 'Спасибо!!! '
+  else if (i.match(thxm)) txt += 'Спасибо!!! '
   
 });
   if (txt.length > 500) txt = 'а всё!';
