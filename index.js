@@ -37,13 +37,13 @@ bot.onText(thxm, (msg) => {
   let txt = ''
   
 t.split(' ').forEach(function (i){
-       if (i.indexOf('спасибо') != -1 || t.indexOf('благодар') != -1) txt += 'Спасибо! '
+       if (i.indexOf('спасибо') != -1 || i.indexOf('благодар') != -1) txt += 'Спасибо! '
   else if (i.indexOf('thanks') != -1) txt += 'О! Вы из Англии! '
   else if (i.indexOf('дякую') != -1) txt += 'Слава Украине! '
   else if (i.indexOf('danke') != -1) txt += 'Sehr dankbar! '
   else if (i.indexOf('dank') != -1) txt += '0/ '
   else if (i.indexOf('grazie') != -1) txt += 'Mamma mia! Pizza mozzarella! '
-  else if (i.indexOf('merci') != -1 || t.indexOf('мерси') != -1) txt += '🥐☕ '
+  else if (i.indexOf('merci') != -1 || i.indexOf('мерси') != -1) txt += '🥐☕ '
   
   else if (i.indexOf('жаль') != -1) txt += 'Сейчас ужалю! '
   else if (i.indexOf('жалк') != -1) txt += 'Жалко у пчелки в попке '
